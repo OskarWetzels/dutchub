@@ -5,11 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <header class="header">
+        <div class="bottom-bar">
+            <div class="bottom-bar__content">
+                <a href="#" class="logo">
+                    <img src="logo.svg" alt="logo" class="logo__img">
+                    <span class="logo__text">dutchub</span>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Benefits</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">How it Works</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="btn">Dashboard</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="hero__content">
+            <div class="heropart1">
+                <div class="hero__heading">
+                    <h1>Send your inventory to us. We do the rest.</h1>
+                </div>
+                <div class="hero__subheading">
+                    <p>Sell across Europe without the hassle: listings, fulfilment and service as one operation. You keep     price control — we run execution.</p>
+                </div>
+                <div class="hero__steps">
+                    <div class="step1">
+                        <div class="step__number">1</div>
+                        <div class="step__text">Send inventory to Dutchub</div>
+                    </div>
+                    <div class="step2">
+                        <div class="step__number">2</div>
+                        <div class="step__text">We handle listing, fulfillment and service</div>
+                    </div>
+                    <div class="step3">
+                        <div class="step__number">3</div>
+                        <div class="step__text">You sell in europe</div>
+                    </div>
+                </div>
+                <div class="hero__buttons">
+                    <button class="button1">Work with us</button>
+                    <button class="button2">See how it works</button>
+                </div>
+            </div>
+            <div class="heropart2">
+                <img src="hero-image.png" alt="hero image" class="hero__image">
+            </div>
         
-    </nav>
+        </div>
+    </div>
+    
     
 </body>
 </html>
