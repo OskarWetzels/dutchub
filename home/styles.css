@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'instrument sans', sans-serif;
 }
 
 a {
@@ -95,9 +96,10 @@ body {
     color: #fff;
     background-color: #e77e1d;
     padding: 12px 30px;
+    font-family: 'Instrument Sans', sans-serif;
     border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     transition: all 0.2s;
 
 }
@@ -277,6 +279,82 @@ h1 {
     height: 500px;
 }
 
+/* BRANDSLIDER */
+
+.brandslider {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.brandslider__container {
+    margin-block: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.brandslider__hide__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 128px;
+    background: linear-gradient(to right, #fff 0%, #fff 40%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+    
+}
+
+.brandslider__hide__right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 128px;
+    background: linear-gradient(to left, #fff 0%, #fff 40%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+
+}
+
+.brandslider__track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logos__slide {
+    display: flex;
+    gap: 100px;
+    padding: 48px 50px;
+    flex-shrink: 0;
+
+}
+
+.logo__wrapper {
+    display: flex;
+    gap: 100px;
+
+}
+
+.logo__wrapper img {
+    height: 28px;
+    object-fit: contain;
+    padding: 0 30px;
+}
 
 /* FOR JS */
 
