@@ -8,16 +8,12 @@
     <script defer src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="bottom-bar">
-            <div class="bottom-bar__content">
+        <div class="bottom__bar">
+            <div class="bottom__bar__content">
                 <a href="#" class="logo">
                     <img src="logo.svg" alt="logo" class="logo__img">
                     <span class="logo__text">dutchub</span>
@@ -28,7 +24,7 @@
                             <a href="#" class="nav__link">Benefits</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#" class="nav__link">How it Works</a>
+                            <button type="button" class="nav__link nav__link--button nav__link--how" aria-controls="megaMenu" aria-expanded="false">How it Works</button>
                         </li>
                         <li class="nav__item">
                             <a href="#" class="nav__link">About</a>
@@ -51,6 +47,8 @@
             </div>
         </div>
     </header>
+
+    
     <div class="hero">
         <div class="hero__content">
             <div class="heropart1">
@@ -76,7 +74,7 @@
                 </div>
                 <div class="hero__buttons">
                     <button class="button1">Work with us</button>
-                    <button class="button2">See how it works</button>
+                    <button class="button2 js-open-mega">See how it works</button>
                 </div>
             </div>
             <div class="heropart2">
@@ -247,17 +245,70 @@
 
 <section class="workwithus">
     <div class="workwithus__content">
-        <h1>Work with Us.</h1>
+        <h2>Work with Us.</h2>
         <p>
                 Partner with dutchhub to scale your brand in Europe — effortlessly. We handle <br>
                 the logistics, data, and growth. You stay in control.
         </p>
         <div class="workwithus__buttons">
             <a href="#" class="workwithus__button--primary">Start partnership</a>
-            <a href="#" class="workwithus__button--secondary">See how it works</a>
+            <a href="#" class="workwithus__button--secondary js-open-mega">See how it works</a>
         </div>
     </div>
 </section>
+   
+   <!-- Mega Menu overlay -->
+   <div class="mega__menu" id="megaMenu" role="dialog" aria-modal="true" aria-labelledby="megaMenuTitle" aria-hidden="true" tabindex="-1">
+        <button class="mega__menu__close" aria-label="Close mega menu">✕</button>
+        <div class="mega__menu__sheet">
+        <div class="mega__menu__inner">
+            <div class="mega__menu__header">
+                <h2 id="megaMenuTitle">Explore</h2>
+            </div>
+            <div class="mega__menu__grid">
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">How it works</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="#">Our Process</a></li>
+                        <li><a href="#">Operations &amp; Fulfillment</a></li>
+                        <li><a href="#">Admin &amp; Payouts</a></li>
+                    </ul>
+                </div>
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Operations</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="#">Customer Care &amp; Returns</a></li>
+                        <li><a href="#">Inventory Intelligence</a></li>
+                        <li><a href="#">B2B &amp; Distribution</a></li>
+                    </ul>
+                </div>
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Growth</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="#">Compliance &amp; EU Access</a></li>
+                        <li><a href="#">EU Expansion Framework</a></li>
+                        <li><a href="#">Performance &amp; Growth</a></li>
+                        <li><a href="#">Content Excellence</a></li>
+                        <li><a href="#">Marketing &amp; Advertising</a></li>
+                        <li><a href="#">Technology &amp; Integrations</a></li>
+                        <li><a href="#">Partner Network</a></li>
+                    </ul>
+                </div>
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Partnership</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="#">Commercial Terms</a></li>
+                        <li><a href="#">Safe Operations</a></li>
+                        <li><a href="#">Compliance &amp; EU Access</a></li>
+                        <li><a href="#">Security &amp; Data Protection</a></li>
+                        <li><a href="#">Support Hub</a></li>
+                        <li><a href="#">Get started</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+   </div>
     
    
     

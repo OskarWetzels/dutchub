@@ -1,5 +1,13 @@
 const navEl = document.querySelector('.nav');
 const hamburgerEl = document.querySelector('.hamburger');
+// Mega menu elements
+const megaMenuEl = document.getElementById('megaMenu');
+const megaOpeners = [
+    document.querySelector('.nav__link--how'),
+    ...Array.from(document.querySelectorAll('.js-open-mega')),
+].filter(Boolean);
+const megaCloseBtn = megaMenuEl ? megaMenuEl.querySelector('.mega__menu__close') : null;
+let lastFocusedElement = null;
 
 let resizeTimer;
 
@@ -30,4 +38,69 @@ window.addEventListener('resize', () => {
         navEl.classList.remove('no-transition');
     }, 100);
 });
+
+// Mega menu logic
+function openMega() {
+    if (!megaMenuEl) return;
+    lastFocusedElement = document.activeElement;
+    megaMenuEl.classList.add('is-open');
+    megaMenuEl.setAttribute('aria-hidden', 'false');
+    const triggerBtn = document.querySelector('.nav__link--how');
+    if (triggerBtn) triggerBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('scroll-lock', 'menu-open--mega');
+    // Close the mobile nav if open
+    navEl?.classList?.remove('nav--open');
+    hamburgerEl?.classList?.remove('hamburger--open');
+    // Focus close button for accessibility
+    megaCloseBtn?.focus();
+}
+
+function closeMega() {
+    if (!megaMenuEl) return;
+    megaMenuEl.classList.add('is-closing');
+    megaMenuEl.classList.remove('is-open');
+    const triggerBtn = document.querySelector('.nav__link--how');
+    if (triggerBtn) triggerBtn.setAttribute('aria-expanded', 'false');
+    const sheet = megaMenuEl.querySelector('.mega__menu__sheet');
+    // Make header visible immediately on close start (sheet sits above, so geen visuele overlap)
+    document.body.classList.remove('menu-open--mega');
+    const onEnd = (e) => {
+        if (e.target !== sheet || e.propertyName !== 'transform') return;
+        megaMenuEl.classList.remove('is-closing');
+        megaMenuEl.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('scroll-lock', 'menu-open--mega');
+        // restore focus
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            lastFocusedElement.focus();
+        }
+        sheet.removeEventListener('transitionend', onEnd);
+    };
+    sheet?.addEventListener('transitionend', onEnd);
+}
+
+megaOpeners.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        e.preventDefault();
+        openMega();
+    });
+});
+
+megaCloseBtn?.addEventListener('click', closeMega);
+
+// Close when clicking background outside inner content
+megaMenuEl?.addEventListener('click', (e) => {
+    if (e.target === megaMenuEl) {
+        closeMega();
+    }
+});
+
+// ESC key to close
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && megaMenuEl?.classList.contains('is-open')) {
+        e.preventDefault();
+        closeMega();
+    }
+});
+
+
 
