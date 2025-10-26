@@ -155,33 +155,35 @@ body {
 
 }
 
+.hero__heading {
+    width: 100%;
+    text-align: center; /* Cross-browser center (Safari/Chrome) */
+}
+
 .heropart1 {
     display: flex;
-    flex: 0 0 60%;
+    flex: 0 0 100%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 
 }
 
-.heropart2 {
-    display: flex;
-    flex: 0 0 40%;
-    justify-content: flex-end;
-    align-items: center;
-
-}
 
 h1 {
-    font-size: 3.6rem;
-    font-weight: 600;
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
 
 }
 
 .hero__subheading {
     font-size: 1rem;
     color: #555555;
+    width: 100%;
+    text-align: center;
 
 }
 
@@ -190,6 +192,8 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px;
+    width: 100%;
+    justify-content: center;
 
 }
 
@@ -228,7 +232,9 @@ h1 {
 .hero__buttons {
     display: flex;  
     gap: 20px;
-    justify-content: flex-start;
+    justify-content: center;
+    width: 100%;
+    
 
 }
 
@@ -386,7 +392,7 @@ h1 {
     z-index: 1100;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .25s ease, visibility 0s linear .25s; /* hide visibility after fade */
+    transition: opacity .25s ease, visibility 0s linear .25s; 
 }
 
 .mega__menu.is-open { opacity: 1; visibility: visible; transition: opacity .25s ease, visibility 0s linear 0s; }
@@ -403,7 +409,7 @@ h1 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     font-size: 20px;
     cursor: pointer;
-    z-index: 2; /* ensure above the sliding sheet */
+    z-index: 2; 
 }
 
 .mega__menu__sheet {
@@ -418,6 +424,7 @@ h1 {
     transform: translateY(-100%);
     transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    overflow: hidden; /* sheet owns its scrolling on mobile */
 }
 
 .mega__menu.is-open .mega__menu__sheet { transform: translateY(0); }
@@ -425,9 +432,24 @@ h1 {
 .mega__menu__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 30px 60px; /* leave space for header */
+    padding: 120px 30px 60px;
 }
 
+/* Desktop: compacter verticale spacing in mega menu */
+@media (min-width: 1000px) {
+    .mega__menu__inner {
+        padding: 80px 30px 40px; /* was 120/60 */
+    }
+    .mega__menu__header h2 {
+        margin-bottom: 16px; /* was 24 */
+    }
+    .mega__menu__col__title {
+        margin-bottom: 12px; /* was 20 */
+    }
+    .mega__menu__links {
+        gap: 12px; /* was 16 */
+    }
+}
 .mega__menu__header h2 {
     font-size: 1rem;
     font-weight: 600;
@@ -438,7 +460,45 @@ h1 {
     opacity: 0;
     transform: translateY(-12px);
     transition: opacity 320ms ease, transform 320ms ease;
-    transition-delay: 220ms; /* iets meer delay na sheet-start */
+    transition-delay: 220ms; 
+}
+
+.mega__menu__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.mega__menu__overview__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #005bff 0%, #0047cc 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 320ms ease;
+    box-shadow: 0 4px 14px rgba(0, 91, 255, 0.3);
+    opacity: 0;
+    transform: translateY(-12px);
+    transition-delay: 660ms;
+}
+
+.mega__menu.is-open .mega__menu__overview__btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mega__menu__overview__btn:hover {
+    opacity: 0.9;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mega__menu.is-closing .mega__menu__overview__btn {
+    transition: opacity 220ms ease, transform 220ms ease;
+    transition-delay: 0ms !important;
 }
 
 .mega__menu__grid {
@@ -478,13 +538,13 @@ h1 {
     transform: translateY(0);
 }
 
-/* Subtle stagger per column to feel smooth but snappy */
+
 .mega__menu.is-open .mega__menu__col:nth-child(1) .mega__menu__col__title { transition-delay: 280ms; }
 .mega__menu.is-open .mega__menu__col:nth-child(2) .mega__menu__col__title { transition-delay: 320ms; }
 .mega__menu.is-open .mega__menu__col:nth-child(3) .mega__menu__col__title { transition-delay: 360ms; }
 .mega__menu.is-open .mega__menu__col:nth-child(4) .mega__menu__col__title { transition-delay: 400ms; }
 
-/* Tweede laag (links) kort na de titels, met subtiele cascade */
+
 .mega__menu__links li {
     opacity: 0;
     transform: translateY(-8px);
@@ -493,7 +553,7 @@ h1 {
 
 .mega__menu.is-open .mega__menu__links li { opacity: 1; transform: translateY(0); }
 
-/* Stagger per item, blijft kort en snappy */
+
 .mega__menu.is-open .mega__menu__links li:nth-child(1) { transition-delay: 420ms; }
 .mega__menu.is-open .mega__menu__links li:nth-child(2) { transition-delay: 450ms; }
 .mega__menu.is-open .mega__menu__links li:nth-child(3) { transition-delay: 480ms; }
@@ -503,7 +563,7 @@ h1 {
 .mega__menu.is-open .mega__menu__links li:nth-child(7) { transition-delay: 600ms; }
 .mega__menu.is-open .mega__menu__links li:nth-child(8) { transition-delay: 630ms; }
 
-/* Exit animation settings: snappy and without delay */
+
 .mega__menu.is-closing .mega__menu__header h2,
 .mega__menu.is-closing .mega__menu__col__title {
     transition: opacity 220ms ease, transform 220ms ease;
@@ -515,12 +575,12 @@ h1 {
     transition-delay: 0ms !important;
 }
 
-/* Body lock when mega menu open */
+
 .scroll-lock {
     overflow: hidden;
 }
 
-/* Fade out header while mega menu is open */
+
 body.menu-open--mega .bottom__bar { opacity: 0; }
 
 /* HOW DUTCHUB WORKS STYLES */
@@ -995,6 +1055,23 @@ body {
 @media (max-width: 560px) {
     .mega__menu__grid {
         grid-template-columns: 1fr;
+    }
+    /* Give the mega menu more usable space on small screens */
+    .mega__menu__sheet {
+        height: 100dvh; /* full dynamic viewport height on mobile */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .mega__menu__inner {
+        padding: 72px 20px 24px; /* tighter padding but more content room */
+        max-height: none; /* allow natural height; sheet scrolls */
+    }
+    .mega__menu__header h2 { margin-bottom: 12px; }
+    .mega__menu__col__title { margin-bottom: 10px; }
+    .mega__menu__links { gap: 10px; }
+    .mega__menu__close {
+        top: calc(env(safe-area-inset-top, 0px) + 12px);
+        right: calc(env(safe-area-inset-right, 0px) + 12px);
     }
 }
 
