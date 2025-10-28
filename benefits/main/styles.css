@@ -514,6 +514,7 @@ h1 {
 
 .process__section {
     margin: 24px 0 80px; 
+    padding: 0 20px;
 }
 
 .process__container {
@@ -693,4 +694,91 @@ h1 {
     .admin__card { padding: 24px; }
     .admin__card__title { font-size: 1.3rem; margin-bottom: 16px; }
     .admin__card__list { gap: 14px; line-height: 1.55; font-size: 0.9rem; }
+}
+
+/* FAQ SECTION */
+.faq {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.faq__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.faq__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+/* FAQ Group (collapsible sections) */
+.faq__group {
+    margin-bottom: 20px;
+    border: 2px solid #005bff;
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.faq__group__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 22px;
+    color: #005bff;
+    background: rgba(0, 91, 255, 0.05);
+}
+
+.faq__group__header:hover {
+    background: rgba(0, 91, 255, 0.1);
+}
+
+.faq__group__content {
+    padding: 16px 20px 8px;
+}
+
+/* Individual FAQ items (nested) */
+.faq__item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Hide default marker */
+summary::-webkit-details-marker { display: none; }
+summary { list-style: none; }
+
+.faq__answer { padding: 0 20px 16px; color: #555; }
+
+.faq__arrow {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #111;
+    border-bottom: 2px solid #111;
+    transform: rotate(45deg);
+    transition: transform .2s ease;
+    flex-shrink: 0;
+}
+
+details[open] > .faq__arrow,
+details[open] > summary .faq__arrow {
+    transform: rotate(225deg);
 }
