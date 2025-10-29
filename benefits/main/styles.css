@@ -531,7 +531,7 @@ h1 {
 .process__card {
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 0 0 1px rgba(0, 91, 255, 0.06), 0 12px 28px rgba(0, 91, 255, 0.16);
+    box-shadow: 0 4px 20px rgba(0, 91, 255, 0.08);
     padding: 36px; 
 }
 
@@ -544,7 +544,7 @@ h1 {
 
 .process__step {
     margin-right: 6px;
-    color: #005bff;
+    color: #000;
 }
 
 .process__list {
@@ -566,7 +566,7 @@ h1 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #005bff;
+    color: #000;
     font-weight: bold;
 }
 
@@ -626,7 +626,7 @@ h1 {
 .admin__card {
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 0 0 0px rgba(0, 91, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 91, 255, 0.08);
     padding: 32px;
     display: flex;
     flex-direction: column;
@@ -643,7 +643,7 @@ h1 {
 
 .admin__card__number {
     margin-right: 6px;
-    color: #005bff;
+    color: #000;
 }
 
 .admin__card__list {
@@ -668,7 +668,7 @@ h1 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #005bff;
+    color: #000;
     font-weight: bold;
 }
 
@@ -676,7 +676,7 @@ h1 {
     .admin__header { margin-bottom: 56px; }
     .admin__heading { font-size: 3.6rem; }
     .admin__grid { gap: 40px; }
-    .admin__card { border-radius: 20px; padding: 38px; box-shadow: 0 0 0 1px rgba(0, 91, 255, 0.06), 0 16px 36px rgba(0, 91, 255, 0.18); }
+    .admin__card { border-radius: 20px; padding: 38px; box-shadow: 0 0 0 0px rgba(0, 91, 255, 0.06), 0 18px 18px rgba(0, 91, 255, 0.08);; }
     .admin__card__title { font-size: 1.65rem; margin-bottom: 24px; }
     .admin__card__list { gap: 18px; line-height: 1.65; font-size: 1rem; }
 }
@@ -699,7 +699,6 @@ h1 {
 
 /* FAQ SECTION */
 .faq {
-    background: #fff;
     padding: 60px 0;
 }
 
