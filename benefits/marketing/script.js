@@ -102,5 +102,40 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Language Selector Logic
+const languageButton = document.getElementById('languageButton');
+const languageDropdown = document.getElementById('languageDropdown');
 
+if (languageButton && languageDropdown) {
+    languageButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language__selector')) {
+            languageDropdown.classList.remove('show');
+        }
+    });
+
+    const languageOptions = languageDropdown.querySelectorAll('.language__option');
+    languageOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = option.getAttribute('data-lang');
+            const selectedText = option.querySelector('.language__text').textContent;
+            
+            console.log('Language selected:', selectedLang, selectedText);
+            
+            languageDropdown.classList.remove('show');
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && languageDropdown.classList.contains('show')) {
+            languageDropdown.classList.remove('show');
+            languageButton.focus();
+        }
+    });
+}
 

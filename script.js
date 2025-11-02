@@ -102,5 +102,49 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Language Selector Logic
+const languageButton = document.getElementById('languageButton');
+const languageDropdown = document.getElementById('languageDropdown');
 
+if (languageButton && languageDropdown) {
+    // Toggle dropdown on button click
+    languageButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('show');
+    });
 
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language__selector')) {
+            languageDropdown.classList.remove('show');
+        }
+    });
+
+    // Handle language selection
+    const languageOptions = languageDropdown.querySelectorAll('.language__option');
+    languageOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
+            const selectedLang = option.getAttribute('data-lang');
+            const selectedText = option.querySelector('.language__text').textContent;
+            
+            // Here you can add logic to actually change the language
+            console.log('Language selected:', selectedLang, selectedText);
+            
+            // Close dropdown
+            languageDropdown.classList.remove('show');
+            
+            // Optional: You can update the button to show selected language
+            // const flag = option.querySelector('.language__flag').textContent;
+            // languageButton.innerHTML = `<span>${flag}</span>`;
+        });
+    });
+
+    // Close dropdown on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && languageDropdown.classList.contains('show')) {
+            languageDropdown.classList.remove('show');
+            languageButton.focus();
+        }
+    });
+}

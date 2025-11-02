@@ -77,9 +77,14 @@ body {
 
 .nav__list {
     display: flex;
+    align-items: center;
     column-gap: 40px;
+}
 
-}    
+.nav__item {
+    display: flex;
+    align-items: center;
+}
 
 .nav__link {
     color: rgba(0, 0, 0, 1);
@@ -114,6 +119,89 @@ body {
 
 .nav .btn:hover{
     background-color: #de8129;
+}
+/* Language Selector */
+.language__selector {
+    position: relative;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.language__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.language__button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.language__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.language__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 140px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+    margin-top: 4px;
+}
+
+.language__dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language__option {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.language__option:hover {
+    background-color: #f5f5f5;
+}
+
+.language__option:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.language__option:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.language__flag {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.language__text {
+    font-weight: 500;
 }
 
 .hamburger {
@@ -578,7 +666,7 @@ h1 {
 }
 
 .operations__card__number {
-    color: #005bff;
+    color: #000;
     margin-right: 8px;
 }
 
@@ -602,7 +690,7 @@ h1 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #005bff;
+    color: #000;
     font-size: 1.5rem;
     line-height: 1.3;
 }
@@ -721,6 +809,28 @@ h1 {
     }
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .content{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+}
+
+.main__text {
+    margin-left: auto;
+}
+
 /* FAQ SECTION */
 .faq {
     padding: 60px 0;
@@ -774,4 +884,14 @@ summary { list-style: none; }
 
 details[open] > summary .faq__arrow {
     transform: rotate(225deg);
+}
+/* Language Selector Mobile Responsiveness */
+@media (max-width: 900px) {
+    .language__selector {
+        margin-left: 8px;
+    }
+    
+    .language__button {
+        padding: 8px;
+    }
 }
