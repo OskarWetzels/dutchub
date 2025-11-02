@@ -894,4 +894,9 @@ details[open] > summary .faq__arrow {
     .language__button {
         padding: 8px;
     }
+    
+    footer .content {
+        flex-direction: column;
+        gap: 12px;
+    }
 }

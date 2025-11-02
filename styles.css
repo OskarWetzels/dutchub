@@ -1409,6 +1409,7 @@ footer .content{
     .faq { padding: 48px 0; }
     .faq__title { font-size: 28px; }
     .faq__question { padding: 14px 18px; }
+    footer .content { flex-direction: column; gap: 12px;
 }
 
 @media (max-width: 600px) {
