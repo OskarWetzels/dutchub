@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Dutchub Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="bottom__bar">
+            <div class="bottom__bar__content">
+                <a href="../../index.html" class="logo">
+                    <img src="../../logo.svg" alt="logo" class="logo__img">
+                    <span class="logo__text">dutchub</span>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../../benefits/index.html" class="nav__link">Benefits</a>
+                        </li>
+                        <li class="nav__item">
+                            <button type="button" class="nav__link nav__link--button nav__link--how" aria-controls="megaMenu" aria-expanded="false">How it Works</button>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">Contact</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="https://dashboard.dutchub.com/login" class="btn">Dashboard</a>
+                        </li>
+                        <li class="nav__item">
+                            <div class="language__selector">
+                                <button type="button" class="language__button" id="languageButton">
+                                    <img src="../../world.png" alt="Language" class="language__icon">
+                                </button>
+                                <div class="language__dropdown" id="languageDropdown">
+                                    <a href="#" class="language__option" data-lang="en">
+                                        <span class="language__flag">🇺🇸</span>
+                                        <span class="language__text">English</span>
+                                    </a>
+                                    <a href="#" class="language__option" data-lang="zh">
+                                        <span class="language__flag">🇨🇳</span>
+                                        <span class="language__text">中文</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="hero__content">
+            <h1>How dutchub works.</h1>
+            <p class="hero__subheading">Plug-and-play entry to Europe. You stay in control.</p>
+            <div class="hero__buttons">
+                    <a href="../../contact/index.html" class="button1">Work with us</a>
+                    <button class="button2 js-open-mega">See how it works</button>
+            </div>
+        </div>
+    </div>
+
+        <section class="process__section">
+            <div class="process__container">
+
+                <article class="process__card">
+                    <h2 class="process__title"><span class="process__step">1.</span> Partner &amp; Prepare</h2>
+                    <ul class="process__list">
+                        <li>We sign a NDA so both sides can share info safely.</li>
+                        <li>With your OK we can pull from existing listings, but we recommend you send your assets (specs, images, manuals) so everything is on-brand.</li>
+                        <li>We tune images if needed (cleanup, crops, on-image translations) and write localized, search-friendly product pages.</li>
+                        <li>You set the sale price. We use your price across channels.</li>
+                        <li>Compliance: brand must meet EU rules (e.g., CE). We can help arrange it; costs are for the brand.</li>
+                        <li>Our edge (quietly): we map your catalog once and can adapt it to each channel’s rules so listings pass checks smoothly—within platform policies and EU law.</li>
+                    </ul>
+                </article>
+
+                <article class="process__card">
+                    <h2 class="process__title"><span class="process__step">2.</span> Deliver &amp; Deploy</h2>
+                    <ul class="process__list">
+                        <li>Inbound is handled in the dashboard: create the shipment notice, pick a slot, upload packing list and labels.</li>
+                        <li>On arrival we scan and check labels/packaging; any issues are flagged back.</li>
+                        <li>When stock is ready, we publish with one action to the marketplaces you choose. We maintain the connectors—no developer work needed on your side.</li>
+                        <li>If there is a custom or B2B order outside the system, tell us in writing; we’ll enter the order, reserve and deduct from dashboard stock, ship, and confirm by report.</li>
+                        <li>We handle admin (channel setup, VAT listing fields, returns address) and note it in your periodic report.</li>
+                    </ul>
+                </article>
+
+                <article class="process__card">
+                    <h2 class="process__title"><span class="process__step">3.</span> Operate &amp; Scale</h2>
+                    <ul class="process__list">
+                        <li>We pick, pack, ship and handle customer service.</li>
+                        <li>Pricing: you decide the sale price; we apply the price as agreed everywhere.</li>
+                        <li>We keep listings accurate and up to date and fix issues when they appear.</li>
+                        <li>We plan for peaks so storage and capacity stay efficient.</li>
+                        <li>Ready to grow? We can add more marketplaces or custom/B2B routes from the same catalog—plug-and-play with your approval.</li>
+                    </ul>
+                </article>
+
+                        </div>
+        </section>
+
+    <section class="admin__section" id="admin-section">
+        <div class="admin__header">
+            <h1 class="admin__heading">How Admin &amp; Payouts work.</h1>
+            <p class="admin__subheading">Plug-and-play entry to Europe. You stay in control.</p>
+        </div>
+
+        <div class="admin__grid">
+            
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">1.</span> Commercial Terms &amp; (if needed) LC</h2>
+                <ul class="admin__card__list">
+                    <li>Service terms – we mutually agree on all operational and financial terms, including the fee model, payout schedule, return dates, and payment responsibilities (who pays whom).</li>
+                    <li>Optional Letter of Credit (LC) – only required if mandated by your finance policy. We coordinate directly with your bank to align on the terms and proceed once the arrangement is confirmed.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">2.</span> Payout Setup (monthly)</h2>
+                <ul class="admin__card__list">
+                    <li>Payout frame: monthly.</li>
+                    <li>Timing: funds are credited within max 2 working weeks after the monthly close.</li>
+                    <li>Method: SEPA/iBAN transfer to your nominated account.</li>
+                    <li>KYC—what it is: Know Your Customer checks some marketplaces/banks may require (basic company ID docs). We only ask if a platform requests it, and only once.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">3.</span> Pricing &amp; Channels</h2>
+                <ul class="admin__card__list">
+                    <li>You set the sale price. We publish your price to the channels you select.</li>
+                    <li>We sell on your behalf using our connectors (no "own account" operation).</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">4.</span> VAT &amp; Compliance</h2>
+                <ul class="admin__card__list">
+                    <li>VAT: we handle VAT collection and payment for sales we execute on your behalf; you don't need to manage VAT filings for these orders.</li>
+                    <li>Compliance: you provide required EU compliance documents (e.g., CE). We can help arrange; costs are for the brand.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">5.</span> Inbound</h2>
+                <ul class="admin__card__list">
+                    <li>You submit a PO and shipping through assigned communication channel: that's enough to book inbound.</li>
+                    <li>On arrival we scan and check labels/ packing; discrepancies are flagged back.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">6.</span> Go-live &amp; Orders</h2>
+                <ul class="admin__card__list">
+                    <li>On your approval, we publish to the marketplaces you've chosen; we maintain the connectors.</li>
+                    <li>For custom/B2B orders outside a marketplace checkout: you request it, we enter the order, reserve &amp; deduct from dashboard stock, ship, and confirm by report.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">7.</span> Periodic Settlement Cycle (Monthly Report)</h2>
+                <ul class="admin__card__list">
+                    <li>We issue a comprehensive monthly settlement report to your designated communication channel, which includes the following details:</li>
+                    <li>Orders and revenue per channel – a full overview of all sales activity across marketplaces, including any custom or B2B orders processed on your behalf.</li>
+                    <li>Shipping and carrier costs, summarizing all labels and related shipping expenses.</li>
+                    <li>Shipping labels/carrier costs purchased for you.</li>
+                    <li>Our service fee (as agreed).</li>
+                    <li>Adjustments (e.g., refunds) and the net amount.</li>
+                    <li>Any extra costs are deducted from the next payout and shown in the report.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">8.</span> Payout</h2>
+                <ul class="admin__card__list">
+                    <li>We transfer the monthly net amount by SEPA/iBAN.</li>
+                    <li>Funds arrive within max 2 working weeks after month-end; the transfer reference matches the settlement report.</li>
+                </ul>
+            </article>
+
+            <article class="admin__card">
+                <h2 class="admin__card__title"><span class="admin__card__number">9.</span> Returns, Defects &amp; Disputes (ongoing)</h2>
+                <ul class="admin__card__list">
+                    <li>We process returns under EU law.</li>
+                    <li>If something arrives defective or can't be sold as new, we notify you and agree the next step (e.g., repair, return to brand, or disposal per instruction).</li>
+                </ul>
+            </article>
+
+        </div>
+        
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="faq__container">
+            <h2 class="faq__title">FAQ - How Dutchub Works &amp; Admin/Payouts</h2>
+
+            <!-- Operations FAQ Group -->
+            <details class="faq__group">
+                <summary class="faq__group__header">
+                    <span>Operations FAQ</span>
+                    <span class="faq__arrow" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__group__content">
+                    
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How long does it take to start selling on European marketplaces?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: When we operate as the selling party (if you don't have an EU entity), we can list your products immediately once compliance documentation is ready - no lengthy marketplace approval needed.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What happens during the "Partner &amp; Prepare" phase?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We sign NDAs, set up your product content, ensure EU compliance, and prepare everything for launch while maintaining your brand standards.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: Can you work with our existing product images and descriptions?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Yes, we optimize your existing assets for European markets, including translations and platform-specific formatting while keeping your brand identity.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How do you handle inventory forecasting?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We start with a baseline assessment, then use sales data to create accurate demand forecasts that help you maintain optimal stock levels and avoid out-of-stock situations.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What's included in the "Operate &amp; Scale" phase?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Complete operations - fulfillment, customer service, pricing maintenance, and scaling to new markets or channels as your business grows.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How do you handle customer service inquiries?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We're the primary contact for customers and handle all inquiries. For complex technical questions, we follow your preferred escalation process.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: Can we activate or deactivate specific sales channels?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Yes, you have full control over which marketplaces are active, and we can quickly adjust based on your strategy.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What happens if there are issues with incoming inventory?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We scan and check all incoming shipments, flagging any discrepancies immediately so we can resolve them together.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </details>
+
+            <!-- Admin & Payouts FAQ Group -->
+            <details class="faq__group">
+                <summary class="faq__group__header">
+                    <span>Admin &amp; Payouts FAQ</span>
+                    <span class="faq__arrow" aria-hidden="true"></span>
+                </summary>
+                <div class="faq__group__content">
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How transparent are your fees and costs?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Fully transparent - you see all marketplace fees, shipping costs, and our commission clearly itemized in monthly reports.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: When do payouts occur?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Monthly settlements with funds transferred within max 2 working weeks after month-end via SEPA/IBAN transfer.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: Do we need to handle VAT registration in Europe?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: No - we handle VAT collection, filing, and payments for all sales we execute on your behalf across EU markets.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What's included in the monthly settlement report?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Complete breakdown of orders per channel, all fees, shipping costs, adjustments, and net amount due - with clear references matching the bank transfer.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How do you handle B2B orders outside marketplace systems?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We manually process custom B2B orders, update inventory, and include them in your regular reporting and settlements.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What compliance documentation do we need to provide?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: Basic EU requirements (CE markings, etc.) - we help coordinate any needed certifications while costs remain with the brand.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How are returns and refunds handled in settlements?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: All returns, refunds, and adjustments are clearly documented in monthly reports and deducted from the following payout.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: Do you require long-term contracts?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: No - we work with flexible terms focused on performance rather than long-term lock-in.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: What payment methods do you accept for our costs?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We work with SEPA/IBAN transfers, and optional Letters of Credit if required by your finance policy.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question">
+                            <span>Q: How do you handle KYC requirements?</span>
+                            <span class="faq__arrow" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq__answer">
+                            <p>A: We only complete basic KYC checks when required by specific marketplaces or banks, typically just once during onboarding.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- Mega Menu overlay -->
+   <div class="mega__menu" id="megaMenu" role="dialog" aria-modal="true" aria-labelledby="megaMenuTitle" aria-hidden="true" tabindex="-1">
+        <button class="mega__menu__close" aria-label="Close mega menu">✕</button>
+        <div class="mega__menu__sheet">
+        <div class="mega__menu__inner">
+            <div class="mega__menu__header">
+                <h2 id="megaMenuTitle">Explore</h2>
+            </div>
+            <div class="mega__menu__grid">
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">How it works</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="../main/index.html">Our Process</a></li>
+                        <li><a href="../operations/index.html">Operations &amp; Fulfillment</a></li>
+                        <li><a href="#admin-section">Admin &amp; Payouts</a></li>
+                    </ul>
+                </div>
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Operations</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="../customersupport/index.html">Customer Care &amp; Returns</a></li>
+                        <li><a href="../Inventory/index.html">Inventory Intelligence</a></li>
+                        <li><a href="../B2B/index.html">B2B &amp; Distribution</a></li>
+                    </ul>
+                </div>
+                                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Growth</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="../EUexpansion/index.html">EU Expansion Framework</a></li>
+                        <li><a href="../Performance/index.html">Performance &amp; Growth</a></li>
+                        <li><a href="../content/index.html">Content Excellence</a></li>
+                        <li><a href="../marketing/index.html">Marketing &amp; Advertising</a></li>
+                        <li><a href="../technology/index.html">Technology &amp; Integrations</a></li>
+                        <li><a href="../partner/index.html">Partner Network</a></li>
+                    </ul>
+                </div>
+                <div class="mega__menu__col">
+                    <h3 class="mega__menu__col__title">Partnership</h3>
+                    <ul class="mega__menu__links">
+                        <li><a href="../commercial/index.html">Commercial Terms</a></li>
+                        <li><a href="../safe/index.html">Safe Operations</a></li>
+                        <li><a href="../compliance/index.html">Compliance &amp; EU Access</a></li>
+                        <li><a href="../support/index.html">Support Hub</a></li>
+                        <li><a href="../getstarted/index.html">Get started</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mega__menu__footer">
+                <a href="../main/index.html" class="mega__menu__overview__btn">Summary</a>
+            </div>
+        </div>
+        </div>
+   </div>
+
+<footer>
+    <div class="content">
+        <a href="../../index.html" class="logo">
+                <img src="../../logo.svg" alt="logo" class="logo__img">
+                <span class="logo__text">dutchub</span>
+        </a>
+        <div class="main__text">
+            <p>COC number: 87844109   |   VAT number: NL864423834B01   |   dutchub is a company of Elite Parts NL B.V.   |   info@dutchub.com</p>
+        </div>
+    </div>
+</footer>
+    
+    
+</body>
+</html>
