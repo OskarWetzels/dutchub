@@ -414,7 +414,7 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 10pxww;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
