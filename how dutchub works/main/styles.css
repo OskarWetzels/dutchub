@@ -233,7 +233,7 @@ body {
     transition: none !important;
 }
 
-.nav--open {
+.nav--open:not(.nav--from-mega) {
     transform: translateX(0%) !important;
 
 }
@@ -268,6 +268,20 @@ body.menu-open--mega .bottom__bar { opacity: 0; }
         z-index: 999;
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Special class for top-down animation when coming from mega menu */
+    .nav--from-mega {
+        transform: translateY(-100%) !important;
+    }
+    
+    .nav--from-mega.nav--open {
+        transform: translateY(0) !important;
+    }
+    
+    /* Override the normal nav--open when using from-mega */
+    .nav.nav--from-mega.nav--open {
+        transform: translateY(0) !important;
     }
     
     .nav::before {

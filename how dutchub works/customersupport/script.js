@@ -11,13 +11,43 @@ let lastFocusedElement = null;
 
 let resizeTimer;
 
+let menuState = 'closed'; // 'closed', 'mega', 'mobile'
+
 hamburgerEl.addEventListener('click', () => {
-    // Remove no-transition class and add transition class for smooth animation
-    navEl.classList.remove('no-transition');
-    navEl.classList.add('is-transitioning');
-    
-    navEl.classList.toggle('nav--open');
-    hamburgerEl.classList.toggle('hamburger--open');
+    if (window.innerWidth <= 900) {
+        // On 'How dutchub works' pages, cycle through: closed > mega > mobile > closed
+        if (menuState === 'closed') {
+            // Open mega menu
+            openMega();
+            menuState = 'mega';
+        } else if (menuState === 'mega') {
+            // Close mega and open mobile nav
+            closeMega();
+            setTimeout(() => {
+                navEl.classList.add('nav--from-mega'); // Add special class for top-down animation
+                navEl.classList.remove('no-transition');
+                navEl.classList.add('is-transitioning');
+                navEl.classList.add('nav--open');
+                hamburgerEl.classList.add('hamburger--open');
+                menuState = 'mobile';
+            }, 100);
+        } else if (menuState === 'mobile') {
+            // Close mobile nav
+            navEl.classList.remove('no-transition');
+            navEl.classList.add('is-transitioning');
+            navEl.classList.remove('nav--open');
+            navEl.classList.remove('nav--from-mega'); // Remove special class when closing
+            hamburgerEl.classList.remove('hamburger--open');
+            menuState = 'closed';
+        }
+    } else {
+        // Desktop behavior remains the same
+        navEl.classList.remove('no-transition');
+        navEl.classList.add('is-transitioning');
+        
+        navEl.classList.toggle('nav--open');
+        hamburgerEl.classList.toggle('hamburger--open');
+    }
 });
 
 // Disable transitions during resize to prevent animation
@@ -26,10 +56,12 @@ window.addEventListener('resize', () => {
     navEl.classList.add('no-transition');
     navEl.classList.remove('is-transitioning');
     
-    // If window is resized above 900px, close the mobile menu
+    // If window is resized above 900px, close the mobile menu and reset state
     if (window.innerWidth > 900) {
         navEl.classList.remove('nav--open');
+        navEl.classList.remove('nav--from-mega');
         hamburgerEl.classList.remove('hamburger--open');
+        menuState = 'closed';
     }
     
     // Remove no-transition class after resize is complete
@@ -69,6 +101,22 @@ function closeMega() {
         megaMenuEl.classList.remove('is-closing');
         megaMenuEl.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('scroll-lock', 'menu-open--mega');
+        
+        // If on mobile and menuState was 'mega', open mobile nav next with top-down animation
+        if (window.innerWidth <= 900 && menuState === 'mega') {
+            setTimeout(() => {
+                navEl.classList.add('nav--from-mega'); // Add special class for top-down animation
+                navEl.classList.remove('no-transition');
+                navEl.classList.add('is-transitioning');
+                navEl.classList.add('nav--open');
+                hamburgerEl.classList.add('hamburger--open');
+                menuState = 'mobile';
+            }, 100);
+        } else {
+            // Reset menu state when mega menu is closed via other means (ESC, background click, etc)
+            menuState = 'closed';
+        }
+        
         // restore focus
         if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
             lastFocusedElement.focus();
@@ -90,7 +138,12 @@ megaCloseBtn?.addEventListener('click', closeMega);
 // Close when clicking background outside inner content
 megaMenuEl?.addEventListener('click', (e) => {
     if (e.target === megaMenuEl) {
+        // Reset to closed when clicking background (skip mobile nav step)
+        const originalState = menuState;
+        menuState = 'closed'; // Set to closed so closeMega doesn't open mobile nav
         closeMega();
+        // Restore original state briefly for the transition logic, then reset
+        setTimeout(() => { menuState = 'closed'; }, 50);
     }
 });
 
@@ -98,12 +151,16 @@ megaMenuEl?.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && megaMenuEl?.classList.contains('is-open')) {
         e.preventDefault();
+        // Reset to closed when pressing ESC (skip mobile nav step)
+        const originalState = menuState;
+        menuState = 'closed'; // Set to closed so closeMega doesn't open mobile nav
         closeMega();
+        // Restore original state briefly for the transition logic, then reset
+        setTimeout(() => { menuState = 'closed'; }, 50);
     }
 });
 
-
-
+// Language Selector Logic
 
 // Language Selector Logic
 const languageButton = document.getElementById('languageButton');

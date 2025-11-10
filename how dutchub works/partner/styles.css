@@ -234,7 +234,6 @@ body {
 
 .nav--open {
     transform: translateX(0%) !important;
-
 }
 
 .hamburger--open .bar:nth-child(1) {

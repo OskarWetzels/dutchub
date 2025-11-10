@@ -11,13 +11,43 @@ let lastFocusedElement = null;
 
 let resizeTimer;
 
+let menuState = 'closed'; // 'closed', 'mega', 'mobile'
+
 hamburgerEl.addEventListener('click', () => {
-    // Remove no-transition class and add transition class for smooth animation
-    navEl.classList.remove('no-transition');
-    navEl.classList.add('is-transitioning');
-    
-    navEl.classList.toggle('nav--open');
-    hamburgerEl.classList.toggle('hamburger--open');
+    if (window.innerWidth <= 900) {
+        // On 'How dutchub works' pages, cycle through: closed > mega > mobile > closed
+        if (menuState === 'closed') {
+            // Open mega menu
+            openMega();
+            menuState = 'mega';
+        } else if (menuState === 'mega') {
+            // Close mega and open mobile nav
+            closeMega();
+            setTimeout(() => {
+                navEl.classList.add('nav--from-mega'); // Add special class for top-down animation
+                navEl.classList.remove('no-transition');
+                navEl.classList.add('is-transitioning');
+                navEl.classList.add('nav--open');
+                hamburgerEl.classList.add('hamburger--open');
+                menuState = 'mobile';
+            }, 100);
+        } else if (menuState === 'mobile') {
+            // Close mobile nav
+            navEl.classList.remove('no-transition');
+            navEl.classList.add('is-transitioning');
+            navEl.classList.remove('nav--open');
+            navEl.classList.remove('nav--from-mega'); // Remove special class when closing
+            hamburgerEl.classList.remove('hamburger--open');
+            menuState = 'closed';
+        }
+    } else {
+        // Desktop behavior remains the same
+        navEl.classList.remove('no-transition');
+        navEl.classList.add('is-transitioning');
+        
+        navEl.classList.toggle('nav--open');
+        hamburgerEl.classList.toggle('hamburger--open');
+    }
 });
 
 // Disable transitions during resize to prevent animation

@@ -231,9 +231,17 @@ body {
     transition: none !important;
 }
 
-.nav--open {
+.nav--open:not(.nav--from-mega) {
     transform: translateX(0%) !important;
+}
 
+/* Mobile nav coming from mega menu (top-down animation) */
+.nav--from-mega {
+    transform: translateY(-100%) !important;
+}
+
+.nav--from-mega.nav--open {
+    transform: translateY(0%) !important;
 }
 
 .hamburger--open .bar:nth-child(1) {

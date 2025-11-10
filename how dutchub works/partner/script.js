@@ -12,12 +12,17 @@ let lastFocusedElement = null;
 let resizeTimer;
 
 hamburgerEl.addEventListener('click', () => {
-    // Remove no-transition class and add transition class for smooth animation
-    navEl.classList.remove('no-transition');
-    navEl.classList.add('is-transitioning');
-    
-    navEl.classList.toggle('nav--open');
-    hamburgerEl.classList.toggle('hamburger--open');
+    // On 'How dutchub works' pages, mobile hamburger opens mega menu instead
+    if (window.innerWidth <= 900) {
+        openMega();
+    } else {
+        // Remove no-transition class and add transition class for smooth animation
+        navEl.classList.remove('no-transition');
+        navEl.classList.add('is-transitioning');
+        
+        navEl.classList.toggle('nav--open');
+        hamburgerEl.classList.toggle('hamburger--open');
+    }
 });
 
 // Disable transitions during resize to prevent animation
@@ -64,11 +69,13 @@ function closeMega() {
     const sheet = megaMenuEl.querySelector('.mega__menu__sheet');
     // Make header visible immediately on close start (sheet sits above, so geen visuele overlap)
     document.body.classList.remove('menu-open--mega');
+    
     const onEnd = (e) => {
         if (e.target !== sheet || e.propertyName !== 'transform') return;
         megaMenuEl.classList.remove('is-closing');
         megaMenuEl.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('scroll-lock', 'menu-open--mega');
+        
         // restore focus
         if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
             lastFocusedElement.focus();
