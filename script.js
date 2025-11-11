@@ -148,3 +148,18 @@ if (languageButton && languageDropdown) {
         }
     });
 }
+
+// Initialize parallax effect when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Reset any existing transforms
+    const heroImageAndBelow = document.querySelector('.hero__image-and-below');
+    const contentBelow = document.querySelector('.hero__image-and-below-content');
+    
+    if (heroImageAndBelow) {
+        heroImageAndBelow.style.transform = '';
+    }
+    if (contentBelow) {
+        contentBelow.style.transform = '';
+        contentBelow.style.opacity = '';
+    }
+});
