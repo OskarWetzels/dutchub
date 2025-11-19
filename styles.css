@@ -259,6 +259,24 @@ body.menu-open--mega .bottom__bar { opacity: 0; }
 
 /* HERO STYLES */
 
+.permanent__button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    color: #fff;
+    background-color: #e77e1d;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: .8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #e77e1d
+}
+
 .hero {
     /* height: 90vh;
     min-height: 800px;
