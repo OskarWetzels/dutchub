@@ -703,6 +703,7 @@ h1 {
 .whatsapp-button:hover {
     opacity: 0.9;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .operations__card__number {
