@@ -261,13 +261,13 @@ body.menu-open--mega .bottom__bar { opacity: 0; }
 
 .permanent__button {
     position: fixed;
-    bottom: 20px;
+    bottom: 12px;
     right: 20px;
     z-index: 1001;
     color: #fff;
     background-color: #e77e1d;
     padding: 12px 30px;
-    border-radius: 10px;
+    border-radius: 1000px;
     font-family: 'Instrument Sans', sans-serif;
     font-size: .8rem;
     font-weight: 500;
@@ -277,6 +277,9 @@ body.menu-open--mega .bottom__bar { opacity: 0; }
     border: 1px solid #e77e1d
 }
 
+.permanent__image {
+    height: 36px;
+}
 .hero {
     /* height: 90vh;
     min-height: 800px;
