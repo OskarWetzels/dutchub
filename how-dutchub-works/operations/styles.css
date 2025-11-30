@@ -776,6 +776,41 @@ h1 {
     line-height: 1.3;
 }
 
+.nextchapter {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 30px;
+    text-align: center;  
+}
+
+.nextchapter a {
+    text-align: center;
+    font-size: 1rem;
+    color: #005bff;
+}
+
+.nextchapter a {
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nextchapter a {
+    color: white;
+    background: linear-gradient(180deg, #005bff 0%, #0047cc 100%);
+}
+
+.nextchapter a:hover {
+    opacity: 0.9;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
